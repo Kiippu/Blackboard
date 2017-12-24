@@ -12,11 +12,16 @@ public:
 
 	virtual const T& GetDataValue() const = 0;
 
-	virtual bool CanSet() const { return false };
+	virtual bool IsLocked() const { return false; };
 
 	virtual void SetDataValue(const T& val) {
-		// insert ASSERT_MSG as default to say I can not store val data
+		if( Locked == true){
+			// ASSERT_ERROR
+			// LOG to screen
+		}
 	}
+protected:
+	bool Locked;
 };
 
 #endif // !BB_ELEMENTS_TEMPLATE_H
