@@ -151,11 +151,8 @@
     <ClInclude Include="BbElementsTemplate.h" />
     <ClInclude Include="BlackboardBase.h" />
     <ClInclude Include="DataType.h" />
-    <ClInclude Include="Names.h" />
-    <ClInclude Include="Register_Enum.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BbData.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

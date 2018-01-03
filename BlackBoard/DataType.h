@@ -7,6 +7,7 @@ typedef enum : unsigned int
 	TYPE_INT = 0,
 	TYPE_DOUBLE,
 	TYPE_STRING,
+	TYPE_CHAR,
 	TYPE_NONE
 	
 	

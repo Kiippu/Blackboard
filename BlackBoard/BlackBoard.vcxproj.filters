@@ -27,20 +27,11 @@
     <ClInclude Include="BbData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Register_Enum.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="DataType.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Names.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BbData.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
