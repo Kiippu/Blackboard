@@ -8,7 +8,6 @@ Testing
 -SetDataVale()	= WORKS
 -GetDataTypes()	= WORKS		//I want to imple the macro enums!!!
 
-
 */
 
 

@@ -8,7 +8,7 @@
 class BlackboardBase
 {
 public:
-	virtual const LABEL_TYPE& GetDataType() const = 0;
+	virtual const DATA_TYPE& GetDataType() const = 0;
 
 	virtual const bool GetAsBool() const = 0;
 };

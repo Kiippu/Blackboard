@@ -1,6 +1,6 @@
 #pragma once
-#ifndef MESSAGE_TYPE_H
-#define MESSAGE_TYPE_H
+#ifndef DATA_TYPE_H
+#define DATA_TYPE_H
 
 typedef enum : unsigned int
 {
@@ -10,11 +10,7 @@ typedef enum : unsigned int
 	TYPE_CHAR,
 	TYPE_NONE
 	
-	
-	
-	
-
-} LABEL_TYPE;
+} DATA_TYPE;
 
 typedef unsigned int ID_MESSAGE;
 
