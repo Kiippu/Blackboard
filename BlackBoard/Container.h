@@ -10,19 +10,19 @@ public:
 	Container();
 	~Container();
 	//addds data
-	void AddData(BlackboardBase&);
+	void Add(BlackboardBase&);
 	//removes data
-	void RemoveData(ID_MESSAGE);
+	void Remove(ID_MESSAGE);
 	//checks if data exists in container
-	bool DataExists();
+	bool Find();
 	//list of messages
-	std::vector<BlackboardBase&> GetMessage(MESSAGE_TYPE);
-
-
+	std::vector<std::pair<BlackboardBase,int>> GetDataByType(MESSAGE_TYPE);
+	//get data out of list
+	BlackboardBase& GetDataByID(int);
 
 private:
 	
-	std::vector<BlackboardBase>		m_blackboard;
+	std::vector<std::pair<BlackboardBase, unsigned int>>		m_blackboard;
 
 };
 

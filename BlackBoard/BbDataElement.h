@@ -2,7 +2,6 @@
 #define BB_DATA_ELEMENT_H
 
 #include "BbElementsTemplate.h"
-#include <string>
 
 template<class T>
 class BbDataElement : public BbElementsTemplate<T>

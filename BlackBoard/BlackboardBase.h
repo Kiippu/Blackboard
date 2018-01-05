@@ -11,6 +11,10 @@ public:
 	virtual const DATA_TYPE& GetDataType() const = 0;
 
 	virtual const bool GetAsBool() const = 0;
+
+	//holds next the incrememnted id tag
+	static ID_MESSAGE	m_messageID;
+
 };
 
 
