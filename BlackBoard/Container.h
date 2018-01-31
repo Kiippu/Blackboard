@@ -1,29 +1,40 @@
 #pragma once
 #include <vector>
 #include "BlackboardBase.h"
+#include "BbDataElement.h"
 #include <memory>
 #include "MessageType.h"
+#include <utility>
+
+namespace {
+	
+}
 
 class Container
 {
 public:
 	Container();
 	~Container();
-	//addds data
-	void Add(BlackboardBase&);
+
+	//adds data
+	void Add(BlackboardBase*);
+
 	//removes data
-	void Remove(ID_MESSAGE);
+	void Remove(MESSAGE_ID);
+	void Remove(MESSAGE_TYPE);
+
 	//checks if data exists in container
-	bool Find();
+	bool Exists(MESSAGE_ID);
+	bool Exists(MESSAGE_TYPE);
+
 	//list of messages
-	std::vector<std::pair<BlackboardBase,int>> GetDataByType(MESSAGE_TYPE);
+	std::vector<std::pair<BlackboardBase *, MESSAGE_ID>> GetDataByType(MESSAGE_TYPE);
 	//get data out of list
-	BlackboardBase& GetDataByID(int);
+	BlackboardBase& GetDataByID(MESSAGE_ID);
 
 private:
-	
-	std::vector<std::pair<BlackboardBase, unsigned int>>		m_blackboard;
-
+	//Vector of all messages
+	std::vector<std::pair<BlackboardBase *, MESSAGE_ID>> m_blackboard;
 };
 
 using CONTAINER_PTR = std::shared_ptr<Container>;

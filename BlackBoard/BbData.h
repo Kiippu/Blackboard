@@ -1,21 +1,21 @@
 #pragma once
 #include "BbDataElement.h"
 
-class BbData_int :
+class Data_int :
 	public BbDataElement<int>
 {
 public:
 	virtual const DATA_TYPE& GetDataType() const {return TYPE_INT;};
 };
 
-class BbData_double :
+class Data_double :
 public BbDataElement<double>
 {
 public:
 	virtual const DATA_TYPE& GetDataType() const { return TYPE_DOUBLE; };
 };
 
-class BbData_string :
+class Data_string :
 	public BbDataElement<std::string>
 {
 public:
@@ -26,7 +26,7 @@ public:
 	};
 };
 
-class BbData_char :
+class Data_char :
 	public BbDataElement<char>
 {
 public:

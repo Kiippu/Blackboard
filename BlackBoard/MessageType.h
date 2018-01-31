@@ -4,15 +4,12 @@
 
 typedef enum : unsigned int
 {
-	TYPE_INT = 0,
-	TYPE_DOUBLE,
-	TYPE_STRING,
-	TYPE_CHAR,
-	TYPE_NONE
+	TYPE_NOT_SET = 0,
+	TYPE_ATTACK
 
 } MESSAGE_TYPE;
 
-typedef unsigned int ID_MESSAGE;
+typedef unsigned int MESSAGE_ID;
 
 
 #endif // !MESSAGE_TYPE_H

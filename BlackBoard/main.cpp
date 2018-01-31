@@ -1,6 +1,7 @@
 /*
 Testing
 
+Data
 -isLocked()		= WORKS
 -LockData()		= WORKS
 -GetAsBool()	= WORKS		// with hacks using var temp to compare original value
@@ -8,37 +9,48 @@ Testing
 -SetDataVale()	= WORKS
 -GetDataTypes()	= WORKS		//I want to imple the macro enums!!!
 
+container
+.Add()					= WORKS
+.Exists(MESSAGE_ID)		= WORKS
+.Exists(MESSAGE_TYPE)	= WORKS
+.Remove()				= UNTESTED
+.Remove()				= UNTESTED
+.Get()					= UNTESTED
+.Get()					= UNTESTED
+
 */
 
 
 #include "BbData.h"
 #include <iostream>
+#include "Container.h"
 
 int main() {
 
-	BbData_double dub;
-	BbData_int inter;
-	BbData_string sting;
-	BbData_char cha;
+	Container container;
 
-	std::cout << "dub not locked: 0 = " << dub.IsLocked() << std::endl;
-	std::cout << "inter not locked: 0 = " << inter.IsLocked() << std::endl;
-	std::cout << "sting not locked: 0 = " << sting.IsLocked() << std::endl;
-	std::cout << "char not locked: 0 = " << cha.IsLocked() << std::endl;
+	Data_int * msg;
 
-	dub.LockData(true);
-	inter.LockData(true);
-	sting.LockData(true);
-	cha.LockData(true);
+	Data_int ms2;
 
-	std::cout << "dub is locked: 1 = " << dub.IsLocked() << std::endl;
-	std::cout << "inter locked: 1 = " << inter.IsLocked() << std::endl;
-	std::cout << "sting locked: 1 = " << sting.IsLocked() << std::endl;
-	std::cout << "char locked: 1 = " << cha.IsLocked() << std::endl;
+	msg = &ms2;
+
+	msg->SetDataValue(100);
+
+	container.Add(msg);
 
 	
 
-	int c;
-	std::cin >> c;
-	return 0;
+	std::cout << "" << container.Exists(0) << std::endl;
+	std::cout << "" << container.Exists(MESSAGE_TYPE::TYPE_NOT_SET) << std::endl;
+
+	std::cout << "" << container.Exists(1) << std::endl;
+	std::cout << "" << container.Exists(MESSAGE_TYPE::TYPE_ATTACK) << std::endl;
+
+	//container.Remove(msg->GetDataType());
+
+
+
+	int k;
+	std::cin >> k;
 }

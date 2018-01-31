@@ -12,7 +12,5 @@ typedef enum : unsigned int
 	
 } DATA_TYPE;
 
-typedef unsigned int ID_MESSAGE;
-
 
 #endif // !MESSAGE_TYPE_H
