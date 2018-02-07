@@ -28,7 +28,7 @@ container
 int main() {
 
 	Container container;
-
+	/*
 	Data_int * msg;
 
 	Data_int ms2;
@@ -53,4 +53,5 @@ int main() {
 
 	int k;
 	std::cin >> k;
+	*/
 }

@@ -30,7 +30,10 @@ public:
 	//list of messages
 	std::vector<std::pair<BlackboardBase *, MESSAGE_ID>> GetDataByType(MESSAGE_TYPE);
 	//get data out of list
-	BlackboardBase& GetDataByID(MESSAGE_ID);
+
+
+	/// Does like this vale of Data!!!!
+	//Data& GetDataByID(MESSAGE_ID);
 
 private:
 	//Vector of all messages

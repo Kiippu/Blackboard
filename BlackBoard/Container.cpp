@@ -5,18 +5,18 @@
 
 Container::Container()
 {
-}
+};
 
 
 Container::~Container()
 {
-}
+};
 
 void Container::Add(BlackboardBase * object)
 {
 	//adds object into vector
 	m_blackboard.push_back(std::make_pair(object, m_messageID++));
-}
+};
 
 void Container::Remove(MESSAGE_ID id)
 {
@@ -26,7 +26,7 @@ void Container::Remove(MESSAGE_ID id)
 			m_blackboard.erase(std::remove(m_blackboard.begin(), m_blackboard.end(), (std::make_pair(obj.first,obj.second))), m_blackboard.end());
 		}
 	}
-}
+};
 
 void Container::Remove(MESSAGE_TYPE msg)
 {
@@ -35,7 +35,7 @@ void Container::Remove(MESSAGE_TYPE msg)
 			m_blackboard.erase(std::remove(m_blackboard.begin(), m_blackboard.end(), (std::make_pair(obj.first, obj.second))), m_blackboard.end());
 		}
 	}
-}
+};
 
 bool Container::Exists(MESSAGE_ID id)
 {
@@ -49,7 +49,7 @@ bool Container::Exists(MESSAGE_ID id)
 	}
 	//if false
 	return false;
-}
+};
 
 bool Container::Exists(MESSAGE_TYPE msg)
 {
@@ -62,7 +62,7 @@ bool Container::Exists(MESSAGE_TYPE msg)
 	}
 	//if false
 	return false;
-}
+};
 
 std::vector<std::pair<BlackboardBase*, MESSAGE_ID>> Container::GetDataByType(MESSAGE_TYPE msg)
 {
@@ -76,53 +76,21 @@ std::vector<std::pair<BlackboardBase*, MESSAGE_ID>> Container::GetDataByType(MES
 		}
 	}
 	return *temp;
-}
+};
 
-BlackboardBase& Container::GetDataByID(MESSAGE_ID id)
+/*------------------ problem here!!!!!!!!!!!!!!!
+Data & Container::GetDataByID(MESSAGE_ID id)
 {
-
-	Data_char* result0;
-	Data_double* result1;
-	Data_int* result2;
-	Data_string* result3;
-	Data_none* result4;
+	Data* result;
 
 	for (auto obj : m_blackboard) {
-		if (obj.first->GetMessageType() == id)
-		{
-			switch (obj.first->GetDataType())
-			{
-			case DATA_TYPE::TYPE_CHAR:
-				result0 = dynamic_cast<Data_char*>(obj.first);
-				if (result0->GetID() == id) {
-					return *obj.first;
-				}
-				break;
-			case DATA_TYPE::TYPE_DOUBLE:
-				result1 = dynamic_cast<Data_double*>(obj.first);
-				if (result1->GetID() == id) {
-					return *obj.first;
-				}				break;
-			case DATA_TYPE::TYPE_INT:
-				result2 = dynamic_cast<Data_int*>(obj.first);
-				if (result2->GetID() == id) {
-					return *obj.first;
-				}				break;
-			case DATA_TYPE::TYPE_STRING:
-				result3 = dynamic_cast<Data_string*>(obj.first);
-				if (result3->GetID() == id) {
-					return *obj.first;
-				} 
-				break;
-			case DATA_TYPE::TYPE_NONE:
-				result4 = dynamic_cast<Data_none*>(obj.first);
-				if (result4->GetID() == id) {
-					return *obj.first;
-				}			
-			default:
-				// insert error msg
-				break;
+		result = dynamic_cast<Data*>(obj.first);
+		if (result->GetDataType() == (TYPE_CHAR || TYPE_DOUBLE || TYPE_INT || TYPE_STRING || TYPE_NONE)) {
+			if (result->GetID() == id) {
+				result = dynamic_cast<Data*>(result);
+				return *result;
 			}
 		}
 	}
-}
+};
+*/

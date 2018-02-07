@@ -12,7 +12,7 @@ static MESSAGE_TYPE		m_messageType = MESSAGE_TYPE::TYPE_NOT_SET;
 class BlackboardBase
 {
 public:
-	virtual const DATA_TYPE& GetDataType() const = 0;
+
 
 	virtual const bool GetAsBool() const = 0;
 
