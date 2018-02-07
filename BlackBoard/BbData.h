@@ -32,3 +32,10 @@ class Data_char :
 public:
 	virtual const DATA_TYPE& GetDataType() const { return TYPE_CHAR; };
 };
+
+class Data_none :
+	public BbDataElement<char>
+{
+public:
+	virtual const DATA_TYPE& GetDataType() const { return TYPE_NONE; };
+};

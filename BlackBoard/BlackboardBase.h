@@ -19,6 +19,7 @@ public:
 	virtual const MESSAGE_ID const GetID() { return m_messageID; };
 
 	virtual const MESSAGE_TYPE const GetMessageType() { return m_messageType; };
+
 };
 
 
