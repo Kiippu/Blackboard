@@ -12,27 +12,30 @@ class DataElementsTemplate :
 public:
 
 	virtual const T& GetDataValue() const { 
-		if (set == false) {
-
+		if (m_notSet == false) {
+			std::cout << "<<ERROR>> DataElement of ID:" << m_data_elements_id <<" has no value set <<ERROR>>" << std::endl;
 		}
-		return m_data; 
+			return m_data; 
 	};
 
 	virtual void SetDataValue(const T& val) {
 		if( m_locked == false){
+			m_notSet = true;
 			m_data = val;
 		}
 		else {
 			// ASSERT_ERROR
 			// LOG to screen
-			std::cout << " This vale it locked, unlock first before setting" << std::endl;
+			std::cout << "<<ERROR>> This vale it locked, unlock first before setting" << std::endl;
 		}
 	}
+private:
+	bool m_notSet = false;
 
 protected:
 	bool m_locked = true;
 	T m_data;
-	T m_temp = m_data;
+
 	DATA_TYPE m_data_type;
 };
 

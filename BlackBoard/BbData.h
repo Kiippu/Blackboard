@@ -16,3 +16,4 @@ const DATA_TYPE& DataElement<double>::GetDataType() const { DATA_TYPE m_data_typ
 
 template<>
 const DATA_TYPE& DataElement<bool>::GetDataType() const { DATA_TYPE m_data_type = TYPE_BOOL; return m_data_type; };
+

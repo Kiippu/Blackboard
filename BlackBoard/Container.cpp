@@ -15,7 +15,7 @@ Container::~Container()
 void Container::Add(BlackboardBase * object)
 {
 	//adds object into vector
-	m_blackboard.push_back(std::make_pair(object, m_messageID++));
+	m_blackboard.push_back(std::make_pair(object, object->GetID()));
 };
 
 void Container::Remove(MESSAGE_ID id)

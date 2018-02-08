@@ -16,7 +16,7 @@ public:
 	virtual const DATA_TYPE& GetDataType() const {  m_data_type = TYPE_UNKNOWN; return m_data_type; };
 
 	virtual const bool GetAsBool() const {
-		if (m_data == m_temp)
+		if (m_locked == true)
 			return false;
 		else
 			return true;
@@ -24,9 +24,9 @@ public:
 
 
 
-protected:
-
+private:
 	DATA_TYPE m_data_type;
+	std::string m_noValue;
 };
 
 

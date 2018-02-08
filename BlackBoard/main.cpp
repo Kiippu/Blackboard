@@ -23,6 +23,7 @@ container
 
 #include "BbData.h"
 #include <iostream>
+#include <string>
 #include "Container.h"
 
 int main() {
@@ -35,7 +36,14 @@ int main() {
 	DataElement<double> gil;
 	DataElement<bool> dav;
 
-	
+	container.Add(&ben);
+	container.Add(&jess);
+	container.Add(&kip);
+	container.Add(&gil);
+	container.Add(&dav);
+
+
+
 	std::cout << " ben char = " << ben.GetAsBool() << std::endl;
 	ben.SetDataValue('d');
 	std::cout << " ben char = " << ben.GetAsBool() << std::endl;
@@ -48,6 +56,8 @@ int main() {
 	std::cout << " ben int = " << ben.GetAsBool() << std::endl;
 
 	std::cout << "\n" << std::endl;
+
+	
 
 	std::cout << " jess int = " << jess.GetAsBool() << std::endl;
 	jess.SetDataValue(66);
@@ -66,12 +76,12 @@ int main() {
 	std::cout << " kip string = " << kip.GetAsBool() << std::endl;
 	kip.SetDataValue("kory");
 	std::cout << " kip string = " << kip.GetAsBool() << std::endl;
-	std::cout << " kip string = " << kip.GetDataValue().c_str() << std::endl;
+	std::cout << " kip string = " << kip.GetDataValue() << std::endl;
 	std::cout << " kip int lock = " << kip.IsLocked() << std::endl;
 	kip.LockData(false);
 	std::cout << " kip int lock = " << kip.IsLocked() << std::endl;
 	kip.SetDataValue("kory");
-	std::cout << " kip int = " << kip.GetDataValue().c_str() << std::endl;
+	std::cout << " kip int = " << kip.GetDataValue() << std::endl;
 	std::cout << " kip int = " << kip.GetAsBool() << std::endl;
 
 	std::cout << "\n" << std::endl;

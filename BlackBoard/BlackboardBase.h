@@ -20,6 +20,8 @@ public:
 
 	virtual const MESSAGE_TYPE const GetMessageType() { return m_messageType; };
 
+protected:
+	unsigned int m_data_elements_id = m_messageID++;
 };
 
 
