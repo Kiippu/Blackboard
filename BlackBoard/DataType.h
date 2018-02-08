@@ -8,7 +8,7 @@ typedef enum : unsigned int
 	TYPE_DOUBLE,
 	TYPE_STRING,
 	TYPE_CHAR,
-	TYPE_NONE
+	TYPE_UNKNOWN
 	
 } DATA_TYPE;
 

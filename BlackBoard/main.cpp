@@ -28,6 +28,32 @@ container
 int main() {
 
 	Container container;
+
+	DataElement<char> ben;
+	DataElement<int> jess;
+	DataElement<std::string> kip;
+	DataElement<double> gil;
+
+	bool bill = false;
+	bill = ben.GetAsBool();
+	std::cout << " bill char = " << bill << std::endl;
+
+	 bill = false;
+	bill = jess.GetAsBool();
+	std::cout << " jess int = " << bill << std::endl;
+
+	 bill = false;
+	bill = kip.GetAsBool();
+	std::cout << " kip string = " << bill << std::endl;
+
+	 bill = false;
+	bill = gil.GetAsBool();
+	std::cout << " gil double = " << bill << std::endl;
+
+
+	int k;
+	std::cin >> k;
+
 	/*
 	Data_int * msg;
 

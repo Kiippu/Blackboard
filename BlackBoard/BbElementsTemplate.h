@@ -6,30 +6,28 @@
 #include <iostream>
 
 template<class T>
-class BbElementsTemplate :
+class DataElementsTemplate :
 	public BlackboardBase
 {
 public:
 
-	virtual const T& GetDataValue() const = 0;
+	virtual const T& GetDataValue() const { return m_data; };
 
-	virtual bool IsLocked() const { return false; };
-
-	virtual void SetDataValue( T& val) {
-		if( m_locked == true){
+	virtual void SetDataValue(const T& val) {
+		if( m_locked == false){
+			m_data = val;
+		}
+		else {
 			// ASSERT_ERROR
 			// LOG to screen
 		}
 	}
 
-	virtual const T& GetDataType() const = 0;
-
-
 protected:
 	bool m_locked = true;
 	T m_data;
-	T m_temp;
-	T m_data_type;
+	T m_temp = m_data;
+	DATA_TYPE m_data_type;
 };
 
 #endif // !BB_ELEMENTS_TEMPLATE_H
