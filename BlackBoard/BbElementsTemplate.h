@@ -11,7 +11,12 @@ class DataElementsTemplate :
 {
 public:
 
-	virtual const T& GetDataValue() const { return m_data; };
+	virtual const T& GetDataValue() const { 
+		if (set == false) {
+
+		}
+		return m_data; 
+	};
 
 	virtual void SetDataValue(const T& val) {
 		if( m_locked == false){
@@ -20,6 +25,7 @@ public:
 		else {
 			// ASSERT_ERROR
 			// LOG to screen
+			std::cout << " This vale it locked, unlock first before setting" << std::endl;
 		}
 	}
 
