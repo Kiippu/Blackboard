@@ -4,10 +4,10 @@ Testing
 Data
 -isLocked()		= WORKS
 -LockData()		= WORKS
--GetAsBool()	= WORKS		// with hacks using var temp to compare original value
+-GetAsBool()	= WORKS
 -GetDataValue()	= WORKS
 -SetDataVale()	= WORKS
--GetDataTypes()	= WORKS		//I want to imple the macro enums!!!
+-GetDataTypes()	= WORKS
 
 container
 .Add()					= WORKS
