@@ -22,7 +22,15 @@ public:
 			return true;
 	};
 
+	// maybe a set all members method taking all required vars in arguments.
 
+	virtual bool setUp(/* all args to set up data*/) {
+		// data
+		// locked
+		// owner of msg
+		//msg type
+		return true;
+	};
 
 private:
 	DATA_TYPE m_data_type;

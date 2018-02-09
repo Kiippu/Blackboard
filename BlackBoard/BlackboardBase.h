@@ -7,12 +7,13 @@
 
 //holds the next the incrememnted id tag
 static MESSAGE_ID		m_messageID = 0;
-static MESSAGE_TYPE		m_messageType = MESSAGE_TYPE::TYPE_NOT_SET;
+static MESSAGE_TYPE		m_messageType = MESSAGE_TYPE::MSG_NOT_SET;
 
 class BlackboardBase
 {
 public:
 
+	virtual bool IsLocked() const = 0;
 
 	virtual const bool GetAsBool() const = 0;
 
@@ -20,8 +21,11 @@ public:
 
 	virtual const MESSAGE_TYPE const GetMessageType() { return m_messageType; };
 
+	// virtual const ###### const getOwner() {retrun m_owner;};
+
 protected:
 	unsigned int m_data_elements_id = m_messageID++;
+	// ######  *m_owner;   /// add entity owner pointer
 };
 
 

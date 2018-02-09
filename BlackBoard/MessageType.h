@@ -4,8 +4,8 @@
 
 typedef enum : unsigned int
 {
-	TYPE_NOT_SET = 0,
-	TYPE_ATTACK
+	MSG_NOT_SET = 0,
+	MSG_ATTACK
 
 } MESSAGE_TYPE;
 
