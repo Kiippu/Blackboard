@@ -29,13 +29,11 @@ public:
 			std::cout << "<<ERROR>> This vale it locked, unlock first before setting" << std::endl;
 		}
 	}
-private:
-	bool m_notSet = false;
 
 protected:
 	bool m_locked = true;
 	T m_data;
-
+	bool m_notSet = false;
 	DATA_TYPE m_data_type;
 };
 

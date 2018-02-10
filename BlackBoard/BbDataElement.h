@@ -9,14 +9,12 @@ class DataElement :
 {
 public:
 
-	virtual void LockData(bool val) { m_locked = val; };
-
 	virtual bool IsLocked() const { return m_locked; };
 
 	virtual const DATA_TYPE& GetDataType() const {  m_data_type = TYPE_UNKNOWN; return m_data_type; };
 
 	virtual const bool GetAsBool() const {
-		if (m_locked == true)
+		if (m_notSet == true)
 			return false;
 		else
 			return true;
@@ -24,11 +22,12 @@ public:
 
 	// maybe a set all members method taking all required vars in arguments.
 
-	virtual bool setUp(/* all args to set up data*/) {
-		// data
-		// locked
-		// owner of msg
-		//msg type
+	virtual bool setUp(T data, MESSAGE_TYPE msg = MESSAGE_TYPE::MSG_NOT_SET, bool lock = false/* , m_owner pointer */ ) {
+		m_data = data;
+		m_locked = lock;
+		m_messageType = msg;
+		m_notSet = true;
+		/* m_owner = owner*/
 		return true;
 	};
 

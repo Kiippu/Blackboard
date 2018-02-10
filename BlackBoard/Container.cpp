@@ -12,27 +12,22 @@ Container::~Container()
 {
 };
 
-void Container::Add(BlackboardBase * object)
-{
-	//adds object into vector
-	m_blackboard.push_back(std::make_pair(object, object->GetID()));
-};
-
 void Container::Remove(MESSAGE_ID id)
 {
-	for (auto &obj : m_blackboard) {
-		if (obj.first->GetID() == id) {
+	for (auto& obj : m_blackboard) {
+		if (obj->GetID() == id) {
 			// removes all elements with the value 5
-			m_blackboard.erase(std::remove(m_blackboard.begin(), m_blackboard.end(), (std::make_pair(obj.first,obj.second))), m_blackboard.end());
+			m_blackboard.erase(std::remove(m_blackboard.begin(), m_blackboard.end(),obj), m_blackboard.end());
 		}
 	}
 };
+//vec.erase(std::remove(vec.begin(), vec.end(), number_in), vec.end());
 
 void Container::Remove(MESSAGE_TYPE msg)
 {
 	for (auto &obj : m_blackboard) {
-		if (obj.first->GetMessageType() == msg) {
-			m_blackboard.erase(std::remove(m_blackboard.begin(), m_blackboard.end(), (std::make_pair(obj.first, obj.second))), m_blackboard.end());
+		if (obj->GetMessageType() == msg) {
+			m_blackboard.erase(std::remove(m_blackboard.begin(), m_blackboard.end(), obj), m_blackboard.end());
 		}
 	}
 };
@@ -43,7 +38,7 @@ bool Container::Exists(MESSAGE_ID id)
 	for (auto &obj : m_blackboard )
 	{
 		//if true
-		if (obj.second == id) {
+		if (obj->GetID() == id) {
 			return true;
 		}
 	}
@@ -56,7 +51,7 @@ bool Container::Exists(MESSAGE_TYPE msg)
 	//cycles through vector is that msg type exists
 	for (auto &obj : m_blackboard) {
 		//if true
-		if (obj.first->GetMessageType() == msg) {
+		if (obj->GetMessageType() == msg) {
 			return true;
 		}
 	}
@@ -64,18 +59,18 @@ bool Container::Exists(MESSAGE_TYPE msg)
 	return false;
 };
 
-std::vector<std::pair<BlackboardBase*, MESSAGE_ID>> Container::GetDataByType(MESSAGE_TYPE msg)
+std::vector<std::shared_ptr<BlackboardBase>> Container::GetDataByType(MESSAGE_TYPE msg)
 {
 	
-	std::shared_ptr<std::vector<std::pair<BlackboardBase*, MESSAGE_ID>>> temp;
+	std::vector<std::shared_ptr<BlackboardBase>> temp;
 	
-	for (auto &obj : m_blackboard) {
-		if (obj.first->GetMessageType() == msg)
+	for (auto & obj : m_blackboard) {
+		if (obj->GetMessageType() == msg)
 		{
-			temp->push_back(obj);
+			temp.push_back(obj);
 		}
 	}
-	return *temp;
+	return temp;
 };
 
 /*------------------ problem here!!!!!!!!!!!!!!!

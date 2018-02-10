@@ -1,6 +1,7 @@
 #pragma once
 #include "BbDataElement.h"
 #include "DataType.h"
+#include <memory>
 
 template<>
 const DATA_TYPE& DataElement<char>::GetDataType() const { DATA_TYPE m_data_type = TYPE_CHAR; return m_data_type; };
